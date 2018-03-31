@@ -7,7 +7,12 @@ public class Coraza : State {
 	public State correr;
 	public Color alertColor;
 
-	private Color normalColor;
+
+	private float timeToChange;
+
+	private float timeToExit;
+
+	private bool once;
 
 
 	void Start(){
@@ -15,25 +20,29 @@ public class Coraza : State {
 
 	void OnEnable()
 	{
-		normalColor = GetComponent<Renderer>().material.color;
+		timeToExit = 0;
+		timeToChange = 1;
+
 	}
 
 	void Update()
 	{
-		Debug.Log ("entre a coraza");
-		if (GetComponent<Renderer>().material.color.Equals(normalColor)) { GetComponent<Renderer>().material.color = alertColor; }
-		else { GetComponent<Renderer>().material.color = normalColor; }
+		timeToExit += Time.deltaTime;
+
+		if (!once)
+		{
+			GetComponent<Renderer> ().material.color.Equals (alertColor);
+			once = true;
+		}
+
 	}
 
 	public override void CheckExit()
 	{
-		StartCoroutine (esperar1Seg ());
+		if (timeToExit >= timeToChange)
+		{
+			stateMachine.ChangeState(correr);
+		}
 	}
-
-	IEnumerator esperar1Seg()
-	{
-		yield return new WaitForSecondsRealtime (10);
-		stateMachine.ChangeState (correr);
-	}
-
+		
 }

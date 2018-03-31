@@ -8,42 +8,51 @@ public class LluviaRocas : State
 	public GameObject player;
 	public GameObject jaguar;
 	public GameObject prefab;
-    public float speed;
+    //public float speed;
 
 	public float vida;
 
+	public float changeRate;
+	private float timeToChange;
 
-    void Update()
-    {
+	private float timeToExit;
+	private bool once;
 
-		Vector2 position = new Vector2(Random.Range(-19, 3), 0);
-		Instantiate(prefab, position, Quaternion.identity);
+	void OnEnable()
+	{
+		//normalColor = renderer.material.color;
+		timeToExit = 0;
+		timeToChange = 2;
 
-		Vector2 position2 = new Vector2(Random.Range(-19, 3), 0);
-		Instantiate(prefab, position2, Quaternion.identity);
+		once = false;
+	}
 
-		Vector2 position3 = new Vector2(Random.Range(-19, 3), 0);
-		Instantiate(prefab, position3, Quaternion.identity);
+	void Update()
+	{
+		timeToExit += Time.deltaTime;
 
-		Vector2 position4 = new Vector2(Random.Range(-19, 3), 0);
-		Instantiate(prefab, position4, Quaternion.identity);
-       
-    }
-
+		if (!once)
+		{
+			for (int i = 0; i < 3; i++) {
+				Vector2 position = new Vector2(Random.Range(-20, 3), 5.5f);
+				Instantiate(prefab, position, Quaternion.identity);
+			}
+			once = true;
+		}
+	}
+    
     public override void CheckExit()
     {
 		if (vida == 0) {
 			stateMachine.ChangeState (morir);
-		} else {
-			StartCoroutine (esperar2Seg ());
+		} else if(timeToExit >= timeToChange){
+			stateMachine.ChangeState (coraza);
 		}
+
+			
     }
 
-	IEnumerator esperar2Seg()
-	{
-		yield return new WaitForSecondsRealtime (5);
-		stateMachine.ChangeState (coraza);
-	}
+
 }
 
 
