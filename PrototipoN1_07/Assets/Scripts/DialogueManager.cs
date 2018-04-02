@@ -63,7 +63,7 @@ public class DialogueManager : MonoBehaviour {
 				buttonUp.SetActive(false);
 				buttonLeft.SetActive(false);
 				buttonRight.SetActive(false);
-				contador++;
+
 			}else {
 				HideBox ();
 				//player.setHorizontalSpeed (5f);
@@ -73,6 +73,8 @@ public class DialogueManager : MonoBehaviour {
 				buttonUp.SetActive(true);
 				buttonLeft.SetActive(true);
 				buttonRight.SetActive(true);
+				contador++;
+
 			}
 		}
 	}
@@ -92,7 +94,7 @@ public class DialogueManager : MonoBehaviour {
 	public bool getDialogueActivated(){
 		return dialogueActivated;
 	}
-
+	/*
 	public void setActualDialogue(int idDialogo)
 	{
 		dialogue = dialogueLine[idDialogo-1]; 
@@ -101,7 +103,19 @@ public class DialogueManager : MonoBehaviour {
 	public string getActualDialogue()
 	{
 		return dialogue; 
+	}*/
+
+	public void setActualDialogue(string dia)
+	{
+		//dialogue = dialogueLine[idDialogo-1]; 
+		dialogue = dia;
 	}
+
+	public string getActualDialogue()
+	{
+		return dialogue; 
+	}
+
 
 	public void ShowBox()
 	{

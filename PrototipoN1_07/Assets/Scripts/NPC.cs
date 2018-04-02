@@ -8,6 +8,7 @@ public class NPC : MonoBehaviour {
 	public Player player;
 	public GameObject symbol;
 	public int idDialogue;
+	public string dialogue;
 	//public Text dText;
 	//necesitamos al manejador de dialogo
 	private DialogueManager dMan;
@@ -73,7 +74,8 @@ public class NPC : MonoBehaviour {
 			//playerIsCloseToTalk = true;
 			dMan.setPlayerIsCloseToTalk(true);
 			//dMan.setActualDialogue(getDialogue());
-			dMan.setActualDialogue(idDialogue);
+			//dMan.setActualDialogue(idDialogue);
+			dMan.setActualDialogue(dialogue);
 			player.setIsTalking (true);
 		} 
 	}

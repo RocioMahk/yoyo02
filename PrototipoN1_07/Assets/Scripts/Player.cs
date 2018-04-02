@@ -81,7 +81,7 @@ public class Player : MonoBehaviour {
 		setHorizontalSpeed(5f);
 		setVerticalSpeed (15f);
 		//setExternalSpeed (0f);
-		setHealth(5);
+		setHealth(15);
 		setMana (50);
 		loaderscene = gameObject.AddComponent<loaderScene>();
 		// Cambiar para cinematica1
