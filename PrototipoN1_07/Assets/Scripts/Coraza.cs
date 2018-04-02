@@ -7,7 +7,6 @@ public class Coraza : State {
 	public State correr;
 	public Color alertColor;
 
-
 	private float timeToChange;
 
 	private float timeToExit;
@@ -21,7 +20,7 @@ public class Coraza : State {
 	void OnEnable()
 	{
 		timeToExit = 0;
-		timeToChange = 1;
+		timeToChange = 3;
 
 	}
 
@@ -31,7 +30,7 @@ public class Coraza : State {
 
 		if (!once)
 		{
-			GetComponent<Renderer> ().material.color.Equals (alertColor);
+			this.gameObject.GetComponent<Renderer> ().material.color = alertColor;
 			once = true;
 		}
 

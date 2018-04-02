@@ -5,12 +5,12 @@ public class LluviaRocas : State
 {
     public State coraza;
 	public State morir;
-	public GameObject player;
+	private Player player;
 	public GameObject jaguar;
 	public GameObject prefab;
     //public float speed;
 
-	public float vida;
+	//public float vida;
 
 	public float changeRate;
 	private float timeToChange;
@@ -22,8 +22,9 @@ public class LluviaRocas : State
 	{
 		//normalColor = renderer.material.color;
 		timeToExit = 0;
-		timeToChange = 2;
+		timeToChange = 3;
 
+		player = FindObjectOfType<Player> ();
 		once = false;
 	}
 
@@ -43,7 +44,7 @@ public class LluviaRocas : State
     
     public override void CheckExit()
     {
-		if (vida == 0) {
+		if (player.getHealth() == 0) {
 			stateMachine.ChangeState (morir);
 		} else if(timeToExit >= timeToChange){
 			stateMachine.ChangeState (coraza);

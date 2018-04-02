@@ -61,6 +61,8 @@
      <Compile Include="Assets\Scripts\ComportamientoPatron.cs" />
      <Compile Include="Assets\Scripts\Coraza.cs" />
      <Compile Include="Assets\Scripts\Correr.cs" />
+     <Compile Include="Assets\Scripts\Correr1.cs" />
+     <Compile Include="Assets\Scripts\Desplazarse.cs" />
      <Compile Include="Assets\Scripts\DestruirConRetraso.cs" />
      <Compile Include="Assets\Scripts\DestruirObjetoPorTiempo.cs" />
      <Compile Include="Assets\Scripts\detectArea.cs" />

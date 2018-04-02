@@ -15,7 +15,7 @@ public class Correr : State {
 
 	public int vecesCorrer;
 	private Player player;
-	public int vida;
+	//public int vida;
 
 
 	void Start(){
@@ -38,7 +38,7 @@ public class Correr : State {
 
 	public override void CheckExit()
 	{
-		if (vida == 0)
+		if (player.getHealth() == 0)
 		{
 			stateMachine.ChangeState(morir);
 		}
