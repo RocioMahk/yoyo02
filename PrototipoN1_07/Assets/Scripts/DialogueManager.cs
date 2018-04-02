@@ -25,6 +25,8 @@ public class DialogueManager : MonoBehaviour {
 	public GameObject buttonLeft;
 	public GameObject buttonRight;
 
+	private int contador = 0;
+
 	//para averiguar si el player esta cerca de un NPC
 	//private NPC npc;
 
@@ -61,6 +63,7 @@ public class DialogueManager : MonoBehaviour {
 				buttonUp.SetActive(false);
 				buttonLeft.SetActive(false);
 				buttonRight.SetActive(false);
+				contador++;
 			}else {
 				HideBox ();
 				//player.setHorizontalSpeed (5f);
@@ -120,6 +123,14 @@ public class DialogueManager : MonoBehaviour {
 		//se desactiva cuadro de dialogo
 		dBox.SetActive (false);
 
+	}
+
+	public void setContador(int what){
+		contador = what;
+	}
+
+	public int getContador(){
+		return contador;
 	}
 
 
