@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/03Boss.unity
+- path: Assets/_Scenes/09level_xolmal2B.unity
   isLoaded: 1
   isActive: 1
