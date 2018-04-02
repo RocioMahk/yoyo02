@@ -42,6 +42,8 @@ public class Player : MonoBehaviour {
 	private Transform tonalliPosition;
 	public GameObject tonalli;
 
+	private int mana;
+	private loaderScene loaderscene;
 
 	//AQUIIIIIIIIIIIIIIIIIII
 	//se usarán para detectar si se esta en el suelo y asi evitar el salto infinito
@@ -79,6 +81,11 @@ public class Player : MonoBehaviour {
 		setHorizontalSpeed(5f);
 		setVerticalSpeed (15f);
 		//setExternalSpeed (0f);
+		setHealth(5);
+		setMana (50);
+		loaderscene = gameObject.AddComponent<loaderScene>();
+		// Cambiar para cinematica1
+
 
 
 	}
@@ -127,12 +134,12 @@ public class Player : MonoBehaviour {
 		//anim.SetFloat("Speed", Math.Abs..........) linea 107
 		//----------------
 
-		if(Input.GetKeyDown (KeyCode.Space) && (dMan.getPlayerIsCloseToTalk () == false))
+		if(Input.GetKeyDown (KeyCode.Space) && (dMan.getPlayerIsCloseToTalk () == false) && (getMana() != 0) )
 		{
 			Fire ();
 		}
 
-		if (mob.getShotPressed () == true && (dMan.getPlayerIsCloseToTalk () == false)) {
+		if (mob.getShotPressed () == true && (dMan.getPlayerIsCloseToTalk () == false) && (getMana() != 0) ) {
 			Fire ();
 		}
 
@@ -156,6 +163,10 @@ public class Player : MonoBehaviour {
 		} 
 
 		//checkGrounded ();
+
+		////////////////////////////////////
+
+		dead ();
 	}	
 
 	public void setIsTalking(bool what)
@@ -252,6 +263,7 @@ public class Player : MonoBehaviour {
 
 	public void Fire(){
 		Instantiate (tonalli, tonalliPosition.position, Quaternion.identity);
+		setMana (getMana () - 1);
 	}
 		
 
@@ -278,5 +290,32 @@ public class Player : MonoBehaviour {
 		GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, verticalSpeed);
 	}
 
+	public void setHealth(int what)
+	{
+		health = what;
+	}
+
+	public int getHealth()
+	{
+		return health;
+	}
+
+	public void setMana(int what)
+	{
+		mana = what;
+	}
+
+	public int getMana()
+	{
+		return mana;
+	}
+	private void dead(){
+		if (getHealth () == 0) {
+			
+			//Destroy (this.gameObject);
+			loaderscene.SetSceneName ("0000");
+			loaderscene.changeScene ();
+		}
+	}
 
 }

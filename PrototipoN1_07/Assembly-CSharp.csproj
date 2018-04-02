@@ -51,22 +51,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Animations\ro\Scripts\DestruirObjetoPorTiempo.cs" />
-     <Compile Include="Assets\Animations\ro\Scripts\EnemyShotController.cs" />
      <Compile Include="Assets\Animations\ro\Scripts\ShootEnemy.cs" />
      <Compile Include="Assets\Scripts\Alert.cs" />
      <Compile Include="Assets\Scripts\BulletController.cs" />
+     <Compile Include="Assets\Scripts\Cacao.cs" />
      <Compile Include="Assets\Scripts\CameraCtrl.cs" />
      <Compile Include="Assets\Scripts\ComportamientoPatron.cs" />
      <Compile Include="Assets\Scripts\Coraza.cs" />
      <Compile Include="Assets\Scripts\Correr.cs" />
      <Compile Include="Assets\Scripts\DestruirConRetraso.cs" />
+     <Compile Include="Assets\Scripts\DestruirObjetoPorTiempo.cs" />
      <Compile Include="Assets\Scripts\detectArea.cs" />
      <Compile Include="Assets\Scripts\DialogueManager.cs" />
      <Compile Include="Assets\Scripts\Dialoguer.cs" />
      <Compile Include="Assets\Scripts\DroppingPlatform.cs" />
      <Compile Include="Assets\Scripts\DropPlat.cs" />
+     <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EnemyPatrol.cs" />
+     <Compile Include="Assets\Scripts\EnemyShotController.cs" />
      <Compile Include="Assets\Scripts\ExternalSpeed.cs" />
      <Compile Include="Assets\Scripts\Feet.cs" />
      <Compile Include="Assets\Scripts\Follow.cs" />
@@ -85,10 +87,10 @@
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\scratchGround.cs" />
      <Compile Include="Assets\Scripts\slide.cs" />
-     <Compile Include="Assets\Scripts\slide02.cs" />
      <Compile Include="Assets\Scripts\slidePlatform.cs" />
      <Compile Include="Assets\Scripts\State.cs" />
      <Compile Include="Assets\Scripts\StateMachine.cs" />
+     <Compile Include="Assets\Scripts\Vainilla.cs" />
      <None Include="Assets\Files\file.txt" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>C:/Users/Dinoyal/Desktop/yoyo02/PrototipoN1_07/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>

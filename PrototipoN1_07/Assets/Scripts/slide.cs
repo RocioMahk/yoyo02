@@ -4,61 +4,112 @@ using UnityEngine;
 
 public class slide : MonoBehaviour {
 
-	int count = 0;
-	bool check = false;
-	bool check1 = false;
-	bool check2 = false;
+	public GameObject camera;
 
-	public GameObject right;
-	public GameObject left;
-	public GameObject center;
 	public GameObject obj1;
+	public GameObject obj2;
+	public GameObject obj3;
+	public GameObject obj4;
+	public GameObject obj5;
+	public GameObject obj6;
+	public GameObject obj7;
+	public GameObject obj8;
+	public GameObject obj9;
+	public GameObject obj10;
+
+	private int contador = 1;
 
 	// Use this for initialization
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		if (check == true) {
-			obj1.transform.position = Vector3.Lerp (obj1.transform.position, right.transform.position, 1f * Time.deltaTime);
-		} else if (check1 == true) {
-			obj1.transform.position = Vector3.Lerp (obj1.transform.position, center.transform.position, 1f * Time.deltaTime);
-		} else if (check2 == true) {
-			obj1.transform.position = Vector3.Lerp (obj1.transform.position, left.transform.position, 1f * Time.deltaTime);
-		}
-		
-	}
 
-	public void right_click(){
-		count++;
-		if (count == 1) {
-			check = true;
-			check1 = false;
-			check2 = false;
-		} else if(count == 0){
-			check = false;
-			check1 = true;
-			check2 = false;
-		}
-		else {
-			count = 1;
-		}
-	}
-
-	public void left_click(){
-		count--;
-		if (count == 0) {
-			check = false;
-			check1 = true;
-			check2 = false;
-		} else if (count == -1){
-			check = false;
-			check1 = false;
-			check2 = true;
+	public void right_click ()
+	{
+		if (contador == 1) {
+			contador = 10;
 		} else {
-			count=-1;
+			contador--;
+		}
+		switch (contador) {
+		case 1:
+			camera.transform.position = Vector3.Lerp (camera.transform.position, obj1.transform.position, 1f * Time.deltaTime);
+			break;
+		case 2:
+			camera.transform.position = Vector3.Lerp (camera.transform.position, obj2.transform.position, 1f * Time.deltaTime);
+			break;
+		case 3:
+			camera.transform.position = Vector3.Lerp (camera.transform.position, obj3.transform.position, 1f * Time.deltaTime);
+			break;
+		case 4:
+			camera.transform.position = Vector3.Lerp (camera.transform.position, obj4.transform.position, 1f * Time.deltaTime);
+			break;
+		case 5:
+			camera.transform.position = Vector3.Lerp (camera.transform.position, obj5.transform.position, 1f * Time.deltaTime);
+			break;
+		case 6:
+			camera.transform.position = Vector3.Lerp (camera.transform.position, obj6.transform.position, 1f * Time.deltaTime);
+			break;
+		case 7:
+			camera.transform.position = Vector3.Lerp (camera.transform.position, obj7.transform.position, 1f * Time.deltaTime);
+			break;
+		case 8:
+			camera.transform.position = Vector3.Lerp (camera.transform.position, obj8.transform.position, 1f * Time.deltaTime);
+			break;
+		case 9:
+			camera.transform.position = Vector3.Lerp (camera.transform.position, obj9.transform.position, 1f * Time.deltaTime);
+			break;
+		case 10:
+			camera.transform.position = Vector3.Lerp (camera.transform.position, obj10.transform.position, 1f * Time.deltaTime);
+			break;
+		default:
+			break;
+
+		}
+	}
+
+	public void left_click ()
+	{
+		if (contador == 10) {
+			contador = 1;
+		} else {
+			contador++;
+		}
+		switch (contador) {
+		case 1:
+			camera.transform.position = Vector3.Lerp (camera.transform.position, obj1.transform.position, 1f * Time.deltaTime);
+			break;
+		case 2:
+			camera.transform.position = Vector3.Lerp (camera.transform.position, obj2.transform.position, 1f * Time.deltaTime);
+			break;
+		case 3:
+			camera.transform.position = Vector3.Lerp (camera.transform.position, obj3.transform.position, 1f * Time.deltaTime);
+			break;
+		case 4:
+			camera.transform.position = Vector3.Lerp (camera.transform.position, obj4.transform.position, 1f * Time.deltaTime);
+			break;
+		case 5:
+			camera.transform.position = Vector3.Lerp (camera.transform.position, obj5.transform.position, 1f * Time.deltaTime);
+			break;
+		case 6:
+			camera.transform.position = Vector3.Lerp (camera.transform.position, obj6.transform.position, 1f * Time.deltaTime);
+			break;
+		case 7:
+			camera.transform.position = Vector3.Lerp (camera.transform.position, obj7.transform.position, 1f * Time.deltaTime);
+			break;
+		case 8:
+			camera.transform.position = Vector3.Lerp (camera.transform.position, obj8.transform.position, 1f * Time.deltaTime);
+			break;
+		case 9:
+			camera.transform.position = Vector3.Lerp (camera.transform.position, obj9.transform.position, 1f * Time.deltaTime);
+			break;
+		case 10:
+			camera.transform.position = Vector3.Lerp (camera.transform.position, obj10.transform.position, 1f * Time.deltaTime);
+			break;
+		default:
+			break;
+
 		}
 	}
 

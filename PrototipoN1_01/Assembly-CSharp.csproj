@@ -79,7 +79,7 @@
      <None Include="Assets\Audio\Audio Credits.txt" />
      <None Include="Assets\Sprites\Actors\Enemies\monster_tiger\get more at bevouliin_dot_com.txt" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Users/Dinoyal/Documents/GitHub/Yolotl/YoloCode/PrototipoN1_01/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>C:/Users/Dinoyal/Desktop/yoyo02/PrototipoN1_01/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -163,7 +163,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/Facebook/UnityEditor.Facebook.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="AGDLevelBuilder">
- <HintPath>C:/Users/Dinoyal/Documents/GitHub/Yolotl/YoloCode/PrototipoN1_01/Assets/AbleGamesDev/LevelBuilder/AGDLevelBuilder.dll</HintPath>
+ <HintPath>C:/Users/Dinoyal/Desktop/yoyo02/PrototipoN1_01/Assets/AbleGamesDev/LevelBuilder/AGDLevelBuilder.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>C:/Users/Dinoyal/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>

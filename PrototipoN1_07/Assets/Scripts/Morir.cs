@@ -5,6 +5,7 @@ using UnityEngine;
 public class Morir : State {
 
 
+
 	void Update()
 	{
 		Debug.Log ("falleci");
