@@ -6,6 +6,7 @@ public class LluviaRocas : State
     public State coraza;
 	public State morir;
 	private Player player;
+	private Boss boss;
 	public GameObject jaguar;
 	public GameObject prefab;
     //public float speed;
@@ -25,6 +26,7 @@ public class LluviaRocas : State
 		timeToChange = 3;
 
 		player = FindObjectOfType<Player> ();
+		boss = FindObjectOfType<Boss> ();
 		once = false;
 	}
 
@@ -44,7 +46,7 @@ public class LluviaRocas : State
     
     public override void CheckExit()
     {
-		if (player.getHealth() == 0) {
+		if (boss.getHealth() <= 0) {
 			stateMachine.ChangeState (morir);
 		} else if(timeToExit >= timeToChange){
 			stateMachine.ChangeState (coraza);

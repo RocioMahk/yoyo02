@@ -103,7 +103,7 @@ public class Desplazarse : State {
 		{
 			stateMachine.ChangeState(morir);
 		}
-		else if(Vector3.Distance(player.transform.position, transform.position) < 4){
+		else if(Vector3.Distance(player.transform.position, transform.position) < 5){
 			stateMachine.ChangeState (impacto);
 		}
 	}

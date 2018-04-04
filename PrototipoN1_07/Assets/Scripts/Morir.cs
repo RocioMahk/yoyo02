@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Morir : State {
 	public GameObject gane;
+	public GameObject destruir;
 
 
 	void Update()
 	{
 		gane.SetActive (true);
 		Debug.Log ("falleci");
-		Destroy (this.gameObject);
+		Destroy (destruir);
 
 	}
 		

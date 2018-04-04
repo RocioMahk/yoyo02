@@ -22,13 +22,6 @@ public class Caida : MonoBehaviour {
 			equis = Random.Range (-11f, 11f);
 			Vector2 pos = new Vector2 (this.gameObject.transform.position.x + equis, this.gameObject.transform.position.y);
 
-			//puntoLanza.position (pos.x, pos.y);
-			//puntoLanza.transform.position.Set(equis, this.gameObject.transform.localPosition.y, this.gameObject.transform.localPosition.z);
-			//puntoLanza.position.x = pos.x;
-			//puntoLanza.position.y = pos.y;
-
-
-
 			//Vector2 pos = new Vector2 (this.gameObject.transform.localPosition., 0f);
 			Instantiate (objetoPrefab, pos, Quaternion.identity);
 			addedTime = 0;

@@ -13,7 +13,6 @@ public class Coraza : State {
 
 	private bool once;
 
-
 	void Start(){
 	}
 
@@ -30,7 +29,7 @@ public class Coraza : State {
 
 		if (!once)
 		{
-			this.gameObject.GetComponent<Renderer> ().material.color = alertColor;
+			this.gameObject.GetComponent<SpriteRenderer> ().color = alertColor;
 			once = true;
 		}
 
